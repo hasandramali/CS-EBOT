@@ -1724,10 +1724,10 @@ void Waypoint::InitTypes()
 
 bool Waypoint::Download(void)
 {
-#ifdef PLATFORM_WIN32
+/*#ifdef PLATFORM_WIN32
     HRESULT hr = URLDownloadToFile(nullptr, FormatBuffer("%s/%s.ewp", ebot_download_waypoints_from.GetString(), GetMapName()), (char*)CheckSubfolderFile(), 0, nullptr);
     if (SUCCEEDED(hr))
-        return true;
+        return false;
 #else
     CURL* curl;
     CURLcode res;
@@ -1753,7 +1753,7 @@ bool Waypoint::Download(void)
     }
     
     curl_global_cleanup();
-#endif
+#endif*/
     return false;
 }
 
