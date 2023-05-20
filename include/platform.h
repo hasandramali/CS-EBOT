@@ -152,7 +152,7 @@ public:
     }
 };
 #else
-#include <curl/curl.h>
+
 class Library
 {
 private:
