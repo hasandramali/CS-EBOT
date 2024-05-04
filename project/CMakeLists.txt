@@ -23,7 +23,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 endif()
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32 -w -mmmx -msse -msse2 -mfpmath=sse -ldl -lm -fvisibility=hidden -fno-exceptions -fno-rtti -Wno-parentheses -fno-pie -pipe -mtune=generic -fomit-frame-pointer -fvisibility-inlines-hidden -floop-nest-optimize -fgraphite-identity -funroll-loops -fno-stack-protector -ffunction-sections -fdata-sections -fcf-protection=none")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32 -w -mmmx -msse -msse2 -mfpmath=sse -ldl -lm -fvisibility=hidden -fno-exceptions -fno-rtti -Wno-parentheses -fno-pie -pipe -mtune=generic -fomit-frame-pointer -fvisibility-inlines-hidden -floop-nest-optimize -fgraphite-identity -funroll-loops -fno-stack-protector -ffunction-sections -fdata-sections")
 
 # Set output directory for the library
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build/ebot)
