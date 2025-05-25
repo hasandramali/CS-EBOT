@@ -8,6 +8,10 @@ set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build/ebot)
 
 # Determine target platform
+if(MSVC)
+    add_compile_options(/wd4005 /wd4251 /wd4267 /wd4996 /wd2440)
+endif()
+
 if(WIN32)
     set(BUILDING_ON_WINDOWS TRUE)
     set(CMAKE_SHARED_LIBRARY_SUFFIX ".dll")

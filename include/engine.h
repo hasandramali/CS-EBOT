@@ -27,30 +27,6 @@
 #endif
 
 // Maximum and minimum representable values
-#define  INT8_MAX    SCHAR_MAX
-#define  INT16_MAX   SHRT_MAX
-#define  INT32_MAX   LONG_MAX
-#define  INT64_MAX  (((int64)~0) >> 1)
-
-#define  INT8_MIN    SCHAR_MIN
-#define  INT16_MIN   SHRT_MIN
-#define  INT32_MIN   LONG_MIN
-#define  INT64_MIN  (((int64)1) << 63)
-
-#define  UINT8_MAX  ((uint8)~0)
-#define  UINT16_MAX ((uint16)~0)
-#define  UINT32_MAX ((uint32)~0)
-#define  UINT64_MAX ((uint64)~0)
-
-#define  UINT8_MIN   0
-#define  UINT16_MIN  0
-#define  UINT32_MIN  0
-#define  UINT64_MIN  0
-
-#ifndef  UINT_MIN
-#define  UINT_MIN    UINT32_MIN
-#endif
-
 #define  FLOAT32_MAX FLT_MAX
 #define  FLOAT64_MAX DBL_MAX
 
