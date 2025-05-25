@@ -33,7 +33,7 @@ jobs:
           mkdir -p build
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release
-          make -j$(nproc)
+          make -j2
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -52,19 +52,16 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
-      - name: Install Ninja
-        run: choco install ninja
-
       - name: Configure and Build with CMake (MSVC x86)
         run: |
           cd project
           mkdir build
           cd build
-          cmake .. -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_GENERATOR_PLATFORM=Win32
-          ninja
+          cmake .. -G "Visual Studio 17 2022" -A Win32 -DCMAKE_BUILD_TYPE=Release
+          cmake --build . --config Release
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ebot-windows
-          path: project/build/ebot/ebot.dll
+          path: project/build/Release/ebot.dll
