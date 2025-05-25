@@ -52,10 +52,10 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
-      - name: Setup Ninja
-        uses: llvm/actions/setup-ninja@main
+      - name: Install Ninja
+        run: choco install ninja
 
-      - name: Configure and Build with CMake
+      - name: Configure and Build with CMake (MSVC x86)
         run: |
           cd project
           mkdir build
