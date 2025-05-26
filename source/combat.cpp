@@ -24,7 +24,7 @@
 
 #include "../include/core.h"
 
-ebot_zombie_wall_hack("ebot_zombie_wall_hack", "0");
+ConVar ebot_zombie_wall_hack("ebot_zombie_wall_hack", "0");
 ConVar ebot_dark_mode("ebot_dark_mode", "0");
 ConVar ebot_zpmode("ebot_zpmode", "1");
 
