@@ -364,7 +364,8 @@ void Bot::FireWeapon(const float distance)
 				KnifeAttack();
 				return;
 			}
-
+			
+		if (ebot_zpmode.GetBool())
 			SelectKnife();
 			return;
 		}
@@ -409,7 +410,10 @@ void Bot::FireWeapon(const float distance)
 	}
 
 	if (m_currentWeapon == Weapon::Knife)
-		KnifeAttack();
+	{
+		if (ebot_zpmode.GetBool())
+			KnifeAttack();
+	}
 	else if (m_firePause < engine->GetTime())
 	{
 		i = 0;
@@ -566,6 +570,9 @@ int Bot::CheckGrenades(void)
 
 void Bot::SelectKnife(void)
 {
+	if (!ebot_zpmode.GetBool())
+        	return;
+	
 	if (m_currentWeapon == Weapon::Knife)
 		return;
 
@@ -607,7 +614,7 @@ void Bot::SelectBestWeapon(void)
 		chosenWeaponIndex = GetHighestWeapon();
 		if (chosenWeaponIndex != -1)
 			SelectWeaponByName(selectTab[chosenWeaponIndex].weaponName);
-		else
+		else if (ebot_zpmode.GetBool())
 			SelectWeaponByName("weapon_knife");
 	}
 }
