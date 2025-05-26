@@ -7,7 +7,7 @@ void Bot::DefaultStart(void)
 
 void Bot::DefaultUpdate(void)
 {
-	if (m_isZombieBot)
+	if (m_isZombieBot && ebot_zpmode.GetBool())
 	{
 		// nearest enemy never resets to nullptr, so bot always know where are alive humans
 		if (IsAlive(m_nearestEnemy) && GetTeam(m_nearestEnemy) != m_team)
