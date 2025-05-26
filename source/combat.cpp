@@ -24,8 +24,9 @@
 
 #include "../include/core.h"
 
-ConVar ebot_zombie_wall_hack("ebot_zombie_wall_hack", "0");
+ebot_zombie_wall_hack("ebot_zombie_wall_hack", "0");
 ConVar ebot_dark_mode("ebot_dark_mode", "0");
+ConVar ebot_zpmode("ebot_zpmode", "1");
 
 int Bot::GetNearbyFriendsNearPosition(const Vector& origin, const float radius)
 {
@@ -300,8 +301,8 @@ void Bot::FindEnemyEntities(void)
 // this function will return true if weapon was fired, false otherwise
 void Bot::FireWeapon(const float distance)
 {
-	if (m_isZombieBot)
-		return;
+	if (m_isZombieBot && ebot_zpmode.GetBool())
+                return;
 	
 	char i;
 	WeaponSelect* selectTab = &g_weaponSelect[0];
@@ -574,11 +575,11 @@ void Bot::SelectKnife(void)
 
 void Bot::SelectBestWeapon(void)
 {
-	if (m_isZombieBot)
-	{
-		SelectKnife();
-		return;
-	}
+        if (m_isZombieBot && ebot_zpmode.GetBool())
+        {
+                SelectKnife();
+                return;
+        }
 
 	if (!m_isSlowThink)
 		return;
