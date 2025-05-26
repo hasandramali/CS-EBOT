@@ -1037,6 +1037,7 @@ inline bool IsNullString(const char* input)
 
 // very global convars
 extern ConVar ebot_gamemod;
+extern ConVar ebot_zpmode;
 
 #include "globals.h"
 #include "resource.h"
