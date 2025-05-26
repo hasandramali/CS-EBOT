@@ -604,6 +604,8 @@ void RoundInit(void)
 					ebot_force_flashlight.SetInt(1);
 					extern ConVar ebot_dark_mode;
 					ebot_dark_mode.SetInt(1);
+					extern ConVar ebot_zpmode;
+					ebot_zpmode.SetInit(1);
 				}
 				else if (zpCvar->string[0] == 'b')
 				{
