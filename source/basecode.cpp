@@ -202,7 +202,7 @@ bool Bot::CheckGrenadeThrow(edict_t* targetEntity)
 	if (m_throw.IsNull())
 	{
 		MakeVectors(pev->v_angle);
-		m_throw = gp_Globals->v_forward * 500.0f;
+		m_throw = g_pGlobals->v_forward * 500.0f;
 	}
 
 	switch (th)
