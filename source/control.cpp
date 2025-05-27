@@ -797,11 +797,7 @@ void Bot::NewRound(void)
 	m_hasFriendsNear = false;
 
 	m_team = GetTeam(m_myself);
-
-	if (!ebot_zpmode.GetBool())
-    	m_isZombieBot = false;
-	else
-    	m_isZombieBot = IsZombieEntity(m_myself);
+	m_isZombieBot = IsZombieEntity(m_myself);
 
 	m_prevTravelFlags = 0;
 	m_currentTravelFlags = 0;

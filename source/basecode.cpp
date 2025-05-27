@@ -763,7 +763,7 @@ void Bot::CheckSlowThink(void)
 	else
 		CalculatePing();
 
-	if (m_isZombieBot && ebot_zpmode.GetBool())
+	if (m_isZombieBot)
 		SelectKnife();
 	else
 	{

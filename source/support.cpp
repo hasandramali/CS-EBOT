@@ -32,6 +32,7 @@
 
 ConVar ebot_ignore_enemies("ebot_ignore_enemies", "0");
 ConVar ebot_zp_delay_custom("ebot_zp_delay_custom", "0.0");
+ConVar ebot_zpmode("ebot_zpmode", "1");
 
 void TraceLine(const Vector& start, const Vector& end, const int& ignoreFlags, edict_t* ignoreEntity, TraceResult* ptr)
 {
@@ -671,7 +672,7 @@ int GetTeam(edict_t* ent)
 
 bool IsZombieEntity(edict_t* ent)
 {
-	return GetTeam(ent) == Team::Terrorist;
+    return GetTeam(ent) == Team::Terrorist && ebot_zpmode.GetBool();
 }
 
 bool IsValidPlayer(edict_t* ent)
