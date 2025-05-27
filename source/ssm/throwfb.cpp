@@ -43,8 +43,11 @@ void Bot::ThrowFBUpdate(void)
 		else // no grenade???
 			FinishCurrentProcess("i have throwed FB grenade");
 	}
-	else if (m_isSlowThink && !(m_buttons & IN_ATTACK) && !(m_oldButtons & IN_ATTACK))
-		m_buttons |= IN_ATTACK;
+	else
+	{
+    		if (!(m_buttons & IN_ATTACK) && !(m_oldButtons & IN_ATTACK))
+        		m_buttons |= IN_ATTACK;
+	}
 }
 
 void Bot::ThrowFBEnd(void)
