@@ -802,7 +802,7 @@ void Bot::CheckSlowThink(void)
 				}
 				else if (m_currentWaypointIndex == m_zhCampPointIndex || m_currentWaypointIndex == m_myMeshWaypoint)
 					SelectBestWeapon();
-				else if (m_navNode.CanFollowPath() && m_navNode.HasNext() & ebot_zpmode.GetBool())
+				else if (m_navNode.CanFollowPath() && m_navNode.HasNext())
 					SelectKnife();
 			}
 		}
