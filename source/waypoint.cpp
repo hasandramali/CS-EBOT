@@ -45,8 +45,6 @@ ConVar ebot_waypoint_b("ebot_waypoint_b", "0");
 ConVar ebot_disable_path_matrix("ebot_disable_path_matrix", "0");
 ConVar ebot_analyze_post_processing("ebot_analyze_post_processing", "0");
 
-concount2 = 0;  // initialize before use
-
 // this function initialize the waypoint sItructures..
 void Waypoint::Initialize(void)
 {
@@ -168,6 +166,7 @@ void OptimizeThread(void)
             if (concount >= 4)
                 continue;
 
+	    concount2 = 0;
             for (j = 0; j < g_numWaypoints; j++)
             {
                 for (C = 0; C < Const_MaxPathIndex; C++)
