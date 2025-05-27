@@ -167,7 +167,10 @@ typedef __m64 v2si;   // vector of 2 int (mmx)
 #define _PD_CONST_TYPE(Name, Type, Val)                                 \
 	static const ALIGN16_BEG Type _pd_##Name[2] ALIGN16_END = { (long long int)Val, (long long int)Val }
 
+#ifndef _MSC_VER
 #pragma mark code section
+#endif
+
 #ifdef SSE_MATHFUN_WITH_CODE
 
 _PS_CONST(1  , 1.0f);
@@ -1309,7 +1312,9 @@ static inline double scalCumSumSumSq( double *xa, int n, double *sumSQ )
 #endif // SSE_MATHFUN_WITH_CODE
 
 //// Some SSE "extensions", and equivalents not using SSE explicitly:
+#ifndef _MSC_VER
 #pragma mark SSE extensions
+#endif
 
 #ifdef USE_SSE2
 
